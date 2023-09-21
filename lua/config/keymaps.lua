@@ -25,5 +25,10 @@ local lazyterm = function()
 end
 -- FIXME: it doesn't work not, https://github.com/LazyVim/LazyVim/discussions/1333
 unmap({ "n", "t" }, "<c-/>")
-map("n", "<c-space>", lazyterm, { desc = "Terminal (root dir)" })
-map("t", "<C-space>", "<cmd>close<cr>", { desc = "Hide Terminal" })
+if vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
+  map("n", "<c-`>", lazyterm, { desc = "Terminal (root dir)" })
+  map("t", "<C-`>", "<cmd>close<cr>", { desc = "Hide Terminal" })
+else
+  map("n", "<c-Space>", lazyterm, { desc = "Terminal (root dir)" })
+  map("t", "<C-Space>", "<cmd>close<cr>", { desc = "Hide Terminal" })
+end

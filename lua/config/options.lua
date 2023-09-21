@@ -7,7 +7,7 @@ vim.opt.guifont = "FiraCode Nerd Font Mono:h13" -- the font used in graphical ne
 
 -- clipboard settings
 if vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
-  vim.opt.shell = "pwsh.exe -NoLogo"
+  vim.opt.shell = "pwsh.exe"
   vim.opt.shellcmdflag =
     "-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;"
   vim.cmd([[
