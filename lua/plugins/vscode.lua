@@ -15,7 +15,6 @@ local enabled = {
   "nvim-treesitter",
   "nvim-treesitter-textobjects",
   "nvim-ts-context-commentstring",
-  "nvim-ts-rainbow2", -- not used but required for loading treesitter
   "vim-repeat",
   "LazyVim",
 }
@@ -59,6 +58,6 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    opts = { highlight = { enable = false }, rainbow = { enable = false } },
+    opts = { highlight = { enable = false } },
   },
 }

@@ -4,10 +4,17 @@ return {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
-        --" stylua",
-        -- "shfmt",
-        -- "flake8",
+        "stylua",
+        "shellcheck",
+        "shfmt",
+        "flake8",
       },
+    },
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      autoformat = false,
     },
   },
 }

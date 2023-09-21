@@ -23,11 +23,13 @@ return {
     dependencies = { "HiPhish/nvim-ts-rainbow2" },
     rainbow = { enable = true },
     opts = function(_, opts)
-      opts.rainbow = {
-        enable = true,
-        query = "rainbow-parens",
-        strategy = require("ts-rainbow").strategy.global,
-      }
+      if not vim.g.vscode then
+        opts.rainbow = {
+          enable = true,
+          query = "rainbow-parens",
+          strategy = require("ts-rainbow").strategy.global,
+        }
+      end
       opts.ensure_installed = {
         "bash",
         "blueprint",
@@ -37,7 +39,6 @@ return {
         "diff",
         "dockerfile",
         "glsl",
-        "git_commit",
         "html",
         "java",
         "javascript",

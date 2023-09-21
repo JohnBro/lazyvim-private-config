@@ -28,6 +28,8 @@ if vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
     },
   }
 elseif vim.fn.has("wsl") == 1 then
+  vim.opt.shell = "zsh"
+  vim.opt.shellcmdflag = ""
   vim.g.clipboard = {
     name = "win32yank-wsl",
     copy = {

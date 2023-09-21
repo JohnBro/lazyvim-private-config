@@ -5,6 +5,13 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
 
 ## installation
 
+### Prerequisites
+
+- Make sure you installed the latest [neovim](https://github.com/neovim/neovim/releases/tag/stable) stable version.
+- Have [git](https://cli.github.com), [make](https://www.gnu.org/software/make/), [pip](https://pypi.org/project/pip/), [python](https://www.python.org/), [npm](https://npmjs.com/), [node](https://nodejs.org/) and cargo installed on your system.
+- Resolve [EACCES permissions when installing packages globally](https://docs.npmjs.com/resolving-eacces-permissions-errors-when-installing-packages-globally) to avoid error when installing packages with npm.
+- [PowerShell 7+](https://learn.microsoft.com/en-us/powershell/scripting/whats-new/migrating-from-windows-powershell-51-to-powershell-7?view=powershell-7.2) (for Windows)
+
 ### Unix/Linux
 
 1. Make a backup of your current Neovim files:
@@ -19,7 +26,7 @@ mv ~/.cache/nvim{,.bak}
 ```
 2. Clone the starter
 ```sh
-git clone https://github.com/LazyVim/starter ~/.config/nvim
+git clone https://git.johnbro.cn/Johnbro/lazyvim_private ~/.config/nvim
 ```
 3. Start the Neovim to lazy install all plugins
 `nvim`
@@ -40,4 +47,3 @@ git clone https://git.johnbro.cn/Johnbro/lazyvim_private $env:LOCALAPPDATA\nvim
 ```
 3. Start Neovim to lazy install all plugins
 `nvim`
-
