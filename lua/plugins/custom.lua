@@ -1,6 +1,9 @@
 -- This is my custome settings for builtin plugin
 
 return {
+  --------------
+  --- Coding ---
+  --------------
   -- Add a nvim-cmp source
   {
     "hrsh7th/nvim-cmp",
@@ -65,6 +68,9 @@ return {
   -- Change surround mappings
   {
     "echasnovski/mini.surround",
+    keys = {
+      { "gs", desc = "vim surround" },
+    },
     opts = {
       mappings = {
         add = "gsa",
@@ -89,4 +95,8 @@ return {
       },
     },
   },
+
+  --------------
+  --- Editor ---
+  --------------
 }

@@ -18,17 +18,3 @@ local function unmap(mode, lhs, opts)
 end
 
 map("i", "jk", "<Esc>", { silent = true, noremap = true })
-
--- floating terminal
-local lazyterm = function()
-  Util.float_term(nil, { cwd = Util.get_root() })
-end
--- FIXME: it doesn't work not, https://github.com/LazyVim/LazyVim/discussions/1333
-unmap({ "n", "t" }, "<c-/>")
-if vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
-  map("n", "<c-`>", lazyterm, { desc = "Terminal (root dir)" })
-  map("t", "<C-`>", "<cmd>close<cr>", { desc = "Hide Terminal" })
-else
-  map("n", "<c-Space>", lazyterm, { desc = "Terminal (root dir)" })
-  map("t", "<C-Space>", "<cmd>close<cr>", { desc = "Hide Terminal" })
-end
