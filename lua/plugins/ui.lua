@@ -23,18 +23,4 @@ return {
       { "<leader>;", '<Cmd>lua require("alpha").start() <CR>', desc = "Dashboard" },
     }
   },
-  {
-    "akinsho/bufferline.nvim",
-    event = "VeryLazy",
-    keys = {
-      { "<leader>be", "<Cmd>BufferLinePickClose<CR>", desc = "Pick buffer close" },
-      { "<leader>bh", "<Cmd>BufferLineCloseLeft<CR>", desc = "Close all left" },
-      { "<leader>bl", "<Cmd>BufferLineCloseRight<CR>", desc = "Close all right" },
-      { "<leader>bn", "<Cmd>BufferLineCycleNext<CR>", desc = "Next Buffer" },
-      { "<leader>bp", "<Cmd>BufferLineCyclePrev<CR>", desc = "Previous Buffer" },
-      { "<leader>bj", "<Cmd>BufferLinePick<CR>", desc = "Jump Buffer" },
-      { "<leader>bD", "<Cmd>BufferLineSortByDirectory<CR>", desc = "Sort by directory" },
-      { "<leader>bL", "<Cmd>BufferLineSortByExtension<CR>", desc = "Sort by language" },
-    },
-  },
 }

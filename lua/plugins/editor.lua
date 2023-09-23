@@ -61,7 +61,7 @@ return {
     opts = {},
     cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
     keys = {
-      { "<C-n>", "<cmd>MCstart<cr>", desc = "Multicursor Start" },
+      { "<c-n>", "<cmd>MCstart<cr>", desc = "Multicursor Start" },
     },
   },
 }
