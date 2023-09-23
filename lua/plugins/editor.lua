@@ -1,4 +1,9 @@
 -- My customizations of https://www.lazyvim.org/plugins/editor
+
+local function map(mode, l, r, desc)
+  vim.keymap.set(mode, l, r, { desc = desc })
+end
+
 return {
   {
     "nvim-telescope/telescope.nvim",
@@ -44,6 +49,19 @@ return {
       defaults = {
         ["<leader>h"] = { name = "+help" },
       },
+    },
+  },
+  {
+    "smoka7/multicursors.nvim",
+    version = "*",
+    event = "VeryLazy",
+    dependencies = {
+      'smoka7/hydra.nvim',
+    },
+    opts = {},
+    cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
+    keys = {
+      { "<C-n>", "<cmd>MCstart<cr>", desc = "Multicursor Start" },
     },
   },
 }
