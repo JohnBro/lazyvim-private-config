@@ -4,12 +4,17 @@
 local Util = require("lazyvim.util")
 
 local function map(mode, lhs, rhs, opts)
-	local options = { noremap = true, silent = true }
-	if opts then
-		options = vim.tbl_extend("force", options, opts)
-	end
-
-  vim.keymap.set(mode, lhs, rhs, options)
+  local keys = require("lazy.core.handler").handlers.keys
+  ---@cast keys LazyKeysHandler
+  -- do not create the keymap if a lazy keys handler exists
+  if not keys.active[keys.parse({ lhs, mode = mode }).id] then
+    opts = opts or {}
+    opts.silent = opts.silent ~= false
+    if opts.remap and not vim.g.vscode then
+      opts.remap = nil
+    end
+    vim.keymap.set(mode, lhs, rhs, opts)
+  end
 end
 
 local function unmap(mode, key, opts)
@@ -27,11 +32,11 @@ unmap("n", "<S-h>")
 unmap("n", "<S-l>")
 
 -- basic mappings
-map("i", "jk", "<Esc>", { silent = true })
+map("i", "jk", "<Esc>", { remap = true })
 
 -- Coding
-map("i", "<Up>", "<C-p>", { silent = false })
-map("n", "<Down>", "<C-n>", { silent = false })
+map("i", "<Up>", "<C-p>", { silent = false, remap = true })
+map("i", "<Down>", "<C-n>", { silent = false, remap = true })
 
 -- Editor
 map("n", "<leader>bo", "<cmd>e #<cr>", { desc = "Switch Other Buffer" })
@@ -39,8 +44,6 @@ if Util.has("telescope.nvim") then
   map("n", "<leader>bb", "<cmd>Telescope buffers show_all_buffers=true <cr>", { desc = "Switch Buffer" })
 end
 if Util.has("bufferline.nvim") then
-  map("n", "H", "<cmd>BufferLineCyclePrev <cr>", { desc = "Previous Buffer" })
-  map("n", "L", "<cmd>BufferLineCycleNext <cr>", { desc = "Next Buffer" })
   map({ "n", "v" }, "<leader>be", "<Cmd>BufferLinePickClose<CR>", { desc = "Pick Close" })
   map({ "n", "v" }, "<leader>bh", "<Cmd>BufferLineCloseLeft<CR>", { desc = "Close Left" })
   map({ "n", "v" }, "<leader>bl", "<Cmd>BufferLineCloseRight<CR>", { desc = "Close Right" })
