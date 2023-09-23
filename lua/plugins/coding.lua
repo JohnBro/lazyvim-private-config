@@ -1,9 +1,5 @@
--- This is my custome settings for builtin plugin
-
+-- My customizations for https://www.lazyvim.org/plugins/coding
 return {
-  --------------
-  --- Coding ---
-  --------------
   -- Add a nvim-cmp source
   {
     "hrsh7th/nvim-cmp",
@@ -64,7 +60,13 @@ return {
       })
     end,
   },
-
+  -- add symbols-outline
+  {
+    "simrat39/symbols-outline.nvim",
+    cmd = "SymbolsOutline",
+    keys = { { "<leader>cs", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
+    config = true,
+  },
   -- Change surround mappings
   {
     "echasnovski/mini.surround",
@@ -83,20 +85,4 @@ return {
       },
     },
   },
-
-  -- Fix clangd offset encoding
-  {
-    "neovim/nvim-lspconfig",
-    opts = {
-      setup = {
-        clangd = function(_, opts)
-          opts.capabilities.offsetEncoding = { "utf-16" }
-        end,
-      },
-    },
-  },
-
-  --------------
-  --- Editor ---
-  --------------
 }

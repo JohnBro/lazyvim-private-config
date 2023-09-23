@@ -7,6 +7,14 @@ end
 return {
   {
     "nvim-telescope/telescope.nvim",
+    opts = {
+      defaults = {
+        layout_strategy = "horizontal",
+        layout_config = { prompt_position = "top" },
+        sorting_strategy = "ascending",
+        winblend = 20,
+      },
+    },
     keys = {
       -- disable the default keymaps
       { "<leader>,", false },
@@ -40,6 +48,7 @@ return {
       { "<leader>hm", "<cmd>Telescope marks<cr>", desc = "Jump to Mark" },
       { "<leader>ho", "<cmd>Telescope vim_options<cr>", desc = "Options" },
       { "<leader>hR", "<cmd>Telescope resume<cr>", desc = "Resume" },
+      { "<leader>hP", function() require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root }) end, desc = "Find Plugin File" },
     },
   },
   {
