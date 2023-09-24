@@ -1,9 +1,4 @@
 -- My customizations of https://www.lazyvim.org/plugins/editor
-
-local function map(mode, l, r, desc)
-  vim.keymap.set(mode, l, r, { desc = desc })
-end
-
 return {
   {
     "nvim-telescope/telescope.nvim",
