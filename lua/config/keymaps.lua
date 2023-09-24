@@ -34,15 +34,13 @@ unmap("n", "<S-l>")
 -- basic mappings
 map("i", "jk", "<Esc>", { remap = true })
 
--- Coding
-map("i", "<Up>", "<C-p>", { silent = false, remap = true })
-map("i", "<Down>", "<C-n>", { silent = false, remap = true })
-
 -- Editor
 map("n", "<leader>bo", "<cmd>e #<cr>", { desc = "Switch Other Buffer" })
+
 if Util.has("telescope.nvim") then
   map("n", "<leader>bb", "<cmd>Telescope buffers show_all_buffers=true <cr>", { desc = "Switch Buffer" })
 end
+
 if Util.has("bufferline.nvim") then
   map({ "n", "v" }, "<leader>be", "<Cmd>BufferLinePickClose<CR>", { desc = "Pick Close" })
   map({ "n", "v" }, "<leader>bh", "<Cmd>BufferLineCloseLeft<CR>", { desc = "Close Left" })
@@ -54,6 +52,9 @@ if Util.has("bufferline.nvim") then
   map({ "n", "v" }, "<leader>bD", "<Cmd>BufferLineSortByDirectory<CR>", { desc = "Sort by Directory" })
   map({ "n", "v" }, "<leader>bL", "<Cmd>BufferLineSortByExtension<CR>", { desc = "Sort by Language" })
 end
+
+map("n", "]<Tab>", "<Cmd>tabnext<CR>", { desc = "Next <Tab>" })
+map("n", "[<Tab>", "<Cmd>tabprevious<CR>", { desc = "Previous <Tab>" })
 
 -- command mode mappings
 map("c", "<C-a>", "<C-b>", { silent = false })
