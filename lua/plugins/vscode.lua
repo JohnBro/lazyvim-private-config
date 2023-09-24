@@ -47,3 +47,5 @@ vim.api.nvim_exec([[
         autocmd CursorHold * call VSCodeNotify('nvim-theme.normal')
     augroup END
 ]], false)
+
+return {}
