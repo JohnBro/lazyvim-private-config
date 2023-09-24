@@ -70,6 +70,7 @@ return {
   -- Change surround mappings
   {
     "echasnovski/mini.surround",
+    version = "*",
     keys = {
       { "gs", desc = "vim surround" },
     },

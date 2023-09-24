@@ -59,9 +59,9 @@ return {
   },
   {
     "folke/which-key.nvim",
-    event = "VeryLazy",
     opts = {
       defaults = {
+        ["gs"] = { name = "+surround" },
         ["<leader>h"] = { name = "+help" },
       },
     },
