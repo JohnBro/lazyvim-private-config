@@ -19,6 +19,7 @@ return {
       -- disable the default keymaps
       { "<leader>,", false },
       { "<leader>bb", false },
+      { "<leader>fb", false },
       { '<leader>s"', false },
       { "<leader>sa", false },
       { "<leader>sc", false },
@@ -49,6 +50,16 @@ return {
       { "<leader>ho", "<cmd>Telescope vim_options<cr>", desc = "Options" },
       { "<leader>hR", "<cmd>Telescope resume<cr>", desc = "Resume" },
       { "<leader>hP", function() require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root }) end, desc = "Find Plugin File" },
+    },
+  },
+  {
+    "nvim-telescope/telescope-file-browser.nvim",
+    dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+    config = function()
+      require("telescope").load_extension "file_browser"
+    end,
+    keys = {
+      { "<leader>fb", "<cmd>Telescope file_browser<cr>", desc = "Files Browser" },
     },
   },
   {
