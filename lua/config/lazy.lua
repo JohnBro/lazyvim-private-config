@@ -6,6 +6,8 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(vim.env.LAZY or lazypath)
 
+local is_gui_running = vim.fn.has("gui_running") > 0
+
 require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
@@ -45,6 +47,7 @@ require("lazy").setup({
         "tutor",
         "zipPlugin",
       },
+      reset = not is_gui_running, -- Fix for GUI commands not work, https://github.com/folke/lazy.nvim/issues/23
     },
   },
 })
