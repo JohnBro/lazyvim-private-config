@@ -3,7 +3,7 @@
 -- Add any additional options here
 vim.g.maplocalleader = ","
 
-vim.opt.guifont = "FiraCode Nerd Font Mono:h13" -- the font used in graphical neovim applications
+vim.opt.guifont = "FiraCode Nerd Font Mono:h12" -- the font used in graphical neovim applications
 
 -- clipboard settings
 if vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
@@ -16,6 +16,7 @@ if vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
     set shellquote= shellxquote=
     ]])
   -- Set a compatible clipboard manager
+  -- Windows default install win32yank.exe in `Neovim/bin`
   vim.g.clipboard = {
     name = "win32-yank",
     copy = {
@@ -30,16 +31,29 @@ if vim.fn.has("win32") == 1 or vim.fn.has("win64") == 1 then
 elseif vim.fn.has("wsl") == 1 then
   vim.opt.shell = "zsh"
   vim.opt.shellcmdflag = ""
-  vim.g.clipboard = {
-    name = "win32yank-wsl",
-    copy = {
-      ["+"] = "win32yank.exe -i --crlf",
-      ["*"] = "win32yank.exe -i --crlf",
-    },
-    paste = {
-      ["+"] = "win32yank.exe -o --lf",
-      ["*"] = "win32yank.exe -o --lf",
-    },
-    cache_enabled = 0,
-  }
+  if vim.fn.executable("win32yank.exe") > 0 then
+    vim.g.clipboard = {
+      name = "win32yank-wsl",
+      copy = {
+        ["+"] = "win32yank.exe -i --crlf",
+        ["*"] = "win32yank.exe -i --crlf",
+      },
+      paste = {
+        ["+"] = "win32yank.exe -o --lf",
+        ["*"] = "win32yank.exe -o --lf",
+      },
+      cache_enabled = 0,
+    }
+  else
+    vim.g.clipboard = {
+      copy = {
+        ["+"] = "clip.exe",
+        ["*"] = "clip.exe",
+      },
+      paste = {
+        ["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+        ["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+      },
+    }
+  end
 end
