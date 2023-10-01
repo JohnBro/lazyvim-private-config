@@ -13,7 +13,6 @@ return {
     keys = {
       -- disable the default keymaps
       { "<leader>,", false },
-      { "<leader>bb", false },
       { "<leader>fb", false },
       { '<leader>s"', false },
       { "<leader>sa", false },
@@ -25,7 +24,6 @@ return {
       { "<leader>sH", false },
       { "<leader>sk", false },
       { "<leader>sM", false },
-      { "<leader>sm", false },
       { "<leader>so", false },
       { "<leader>sR", false },
       -- buffer
@@ -40,8 +38,7 @@ return {
       { "<leader>hh", "<cmd>Telescope help_tags<cr>", desc = "Help Pages" },
       { "<leader>hH", "<cmd>Telescope highlights<cr>", desc = "Search Highlight Groups" },
       { "<leader>hk", "<cmd>Telescope keymaps<cr>", desc = "Key Maps" },
-      { "<leader>hM", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
-      { "<leader>hm", "<cmd>Telescope marks<cr>", desc = "Jump to Mark" },
+      { "<leader>hm", "<cmd>Telescope man_pages<cr>", desc = "Man Pages" },
       { "<leader>ho", "<cmd>Telescope vim_options<cr>", desc = "Options" },
       { "<leader>hR", "<cmd>Telescope resume<cr>", desc = "Resume" },
       { "<leader>hP", function() require("telescope.builtin").find_files({ cwd = require("lazy.core.config").options.root }) end, desc = "Find Plugin File" },
@@ -63,6 +60,7 @@ return {
       defaults = {
         ["gs"] = { name = "+surround" },
         ["<leader>h"] = { name = "+help" },
+        ["<leader>w"] = { name = "+window" },
       },
     },
   },
@@ -76,7 +74,7 @@ return {
     opts = {},
     cmd = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
     keys = {
-      { "<c-n>", "<cmd>MCstart<cr>", desc = "Multicursor Start" },
+      { mode = { "n", "v"}, "<c-n>", "<cmd>MCstart<cr>", desc = "Multicursor Start" },
     },
   },
 }

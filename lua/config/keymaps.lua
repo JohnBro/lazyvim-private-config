@@ -24,35 +24,22 @@ end
 
 -- stylelua: ignore start
 -- unmap default mappings
-unmap("n", "<leader>ww")
-unmap("n", "<leader>wd")
-unmap("n", "<leader>w-")
-unmap("n", "<leader>w|")
 unmap("n", "<S-h>")
 unmap("n", "<S-l>")
+unmap("n", "<leader>l")
+unmap("n", "<leader>L")
 
 -- basic mappings
 map("i", "jk", "<Esc>", { remap = true })
 
--- Editor
+-- buffers
 map("n", "<leader>bo", "<cmd>e #<cr>", { desc = "Switch Other Buffer" })
 
 if Util.has("telescope.nvim") then
   map("n", "<leader>bb", "<cmd>Telescope buffers show_all_buffers=true <cr>", { desc = "Switch Buffer" })
 end
 
-if Util.has("bufferline.nvim") then
-  map({ "n", "v" }, "<leader>be", "<Cmd>BufferLinePickClose<CR>", { desc = "Pick Close" })
-  map({ "n", "v" }, "<leader>bh", "<Cmd>BufferLineCloseLeft<CR>", { desc = "Close Left" })
-  map({ "n", "v" }, "<leader>bl", "<Cmd>BufferLineCloseRight<CR>", { desc = "Close Right" })
-  map({ "n", "v" }, "<leader>bO", "<Cmd>BufferLineCloseOthers<CR>", { desc = "Close Others" })
-  map({ "n", "v" }, "<leader>bn", "<Cmd>BufferLineCycleNext<CR>", { desc = "Next Buffer" })
-  map({ "n", "v" }, "<leader>bp", "<Cmd>BufferLineCyclePrev<CR>", { desc = "Previous Buffer" })
-  map({ "n", "v" }, "<leader>bj", "<Cmd>BufferLinePick<CR>", { desc = "Jump Buffer" })
-  map({ "n", "v" }, "<leader>bD", "<Cmd>BufferLineSortByDirectory<CR>", { desc = "Sort by Directory" })
-  map({ "n", "v" }, "<leader>bL", "<Cmd>BufferLineSortByExtension<CR>", { desc = "Sort by Language" })
-end
-
+-- tabs
 map("n", "]<Tab>", "<Cmd>tabnext<CR>", { desc = "Next <Tab>" })
 map("n", "[<Tab>", "<Cmd>tabprevious<CR>", { desc = "Previous <Tab>" })
 
@@ -60,3 +47,7 @@ map("n", "[<Tab>", "<Cmd>tabprevious<CR>", { desc = "Previous <Tab>" })
 map("c", "<C-a>", "<C-b>", { silent = false })
 map("c", "<Up>", "<C-p>", { silent = false })
 map("c", "<Down>", "<C-n>", { silent = false })
+
+-- LazyVim
+map("n", '<leader>hl', "<cmd>Lazy<cr>", { desc = "Lazy" })
+map("n", "<leader>hL", Util.changelog, {desc = "LazyVim Changelog"})

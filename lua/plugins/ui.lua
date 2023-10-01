@@ -41,6 +41,24 @@ return {
       { "<leader>;", '<Cmd>lua require("alpha").start() <CR>', desc = "Dashboard" },
     }
   },
+  {
+    "akinsho/bufferline.nvim",
+    keys = {
+      -- { "<leader>bp", "<Cmd>BufferLineTogglePin<CR>", desc = "Toggle pin" },
+      -- { "<leader>bP", "<Cmd>BufferLineGroupClose ungrouped<CR>", desc = "Delete non-pinned buffers" },
+      { "<leader>be", "<Cmd>BufferLinePickClose<CR>", desc = "Pick Close" },
+      { "<leader>bh", "<Cmd>BufferLineCloseLeft<CR>", desc = "Close Left" },
+      { "<leader>bl", "<Cmd>BufferLineCloseRight<CR>", desc = "Close Right" },
+      { "<leader>bO", "<Cmd>BufferLineCloseOthers<CR>", desc = "Close Others" },
+      { "<leader>bn", "<Cmd>BufferLineCycleNext<CR>", desc = "Next Buffer" },
+      { "<leader>bp", "<Cmd>BufferLineCyclePrev<CR>", desc = "Previous Buffer" },
+      { "<leader>bj", "<Cmd>BufferLinePick<CR>", desc = "Jump Buffer" },
+      { "<leader>bD", "<Cmd>BufferLineSortByDirectory<CR>", desc = "Sort by Directory" },
+      { "<leader>bL", "<Cmd>BufferLineSortByExtension<CR>", desc = "Sort by Language" },
+      { "<leader>bt", "<Cmd>BufferLineTogglePin<CR>", desc = "Toggle pin" },
+      { "<leader>bT", "<Cmd>BufferLineGroupClose<CR>", desc = "Delete non-pinned buffers" },
+    },
+  },
   -- the opts function can also be used to change the default opts:
   {
     "nvim-lualine/lualine.nvim",
