@@ -29,6 +29,9 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
     - [vim-illuminate](#vim-illuminate)
     - [edgy.nvim](#edgynvim)
     - [project.nvim](#projectnvim)
+    - [VSCode-Neovim](#vscode-neovim)
+  - [Confiugration](#confiugration)
+    - [Vscode](#vscode)
 
 ## Installation
 
@@ -82,7 +85,7 @@ git clone https://git.johnbro.cn/Johnbro/lazyvim_private $env:LOCALAPPDATA\nvim
 
 ## Keymaps
 
-I have many self customoizations based on LazyVim defaults, regards to all the defaults of LazyVim keymsp, please refer 
+I have many self customization based on LazyVim defaults, regards to all the defaults of LazyVim keymsp, please refer 
 to <https://www.lazyvim.org/keymaps>.
 
 - Default `<leader>` is `<space>`.
@@ -351,3 +354,49 @@ Part of [lazyvim.plugins.extras.util.project](https://www.lazyvim.org/extras/uti
 |     Key      | Description | Mode |
 | :----------- | :---------- | :--- |
 | `<leader>fp` | Projects    | `n`  |
+
+### [VSCode-Neovim](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim)
+
+| Key          | Description               | Mode |
+| :----------- | :------------------------ | :--- |
+| `<tab>`      | Toggle fold               | `n`  |
+| `<leader>bn` | Next Editor               | `n`  |
+| `<leader>bp` | Previous Editor           | `n`  |
+| `<leader>bb` | Quick Open                | `n`  |
+| `<leader>bd` | Close Active Editor       | `n`  |
+| `<leader>bO` | Close Other Editors       | `n`  |
+| `<leader>ul` | Toggle sidebar visibility | `n`  |
+| `<leader>ur` | Toggle right sidebar      | `n`  |
+| `<leader>ua` | Toggle Activity bar       | `n`  |
+
+## Confiugration
+
+### Vscode
+
+1. Please install `vscode-neovim` and `Neovim Ui Modifier` in your vscode. WSL should also install `Neovim Ui Modifier` in remote.
+2. Please set neovim path in settings.
+3. LazyVim has some default vscode settings, please refer to <https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/plugins/extras/vscode.lua>.
+
+If you want to add more plugins support for vscode, please choose a good:
+1. add `vscode = true` into plugin configuration.
+2. add `cond = vim.g.vscode` into plugin configuration. I think this way is better.
+
+LazyVim default enable below plugins + `flash.nvim`:
+
+```lua
+local enabled = {
+  "flit.nvim",
+  "lazy.nvim",
+  "leap.nvim",
+  "mini.ai",
+  "mini.comment",
+  "mini.pairs",
+  "mini.surround",
+  "nvim-treesitter",
+  "nvim-treesitter-textobjects",
+  "nvim-ts-context-commentstring",
+  "vim-repeat",
+  "LazyVim",
+}
+```
+Please check `plugins/vscode.lua` for my customization for vscode.

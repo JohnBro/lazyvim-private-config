@@ -14,8 +14,8 @@ vim.api.nvim_create_autocmd("User", {
     -- vim.keymap.set("n", "<leader>ss", [[<cmd>call VSCodeNotify('workbench.action.gotoSymbol')<cr>]])
     vim.keymap.set("n", "gr", "<cmd>call VSCodeNotify('references-view.findReferences')<cr>")
     vim.keymap.set("n", "<Tab>", "<cmd>call VSCodeNotify('editor.toggleFold')<cr>")
-    vim.keymap.set("n", "<leader>bn", "<cmd>call VSCodeNotify('workbench.action.previousEditor')<cr>")
-    vim.keymap.set("n", "<leader>bp", "<cmd>call VSCodeNotify('workbench.action.nextEditor')<cr>")
+    vim.keymap.set("n", "<leader>bn", "<cmd>call VSCodeNotify('workbench.action.nextEditor')<cr>")
+    vim.keymap.set("n", "<leader>bp", "<cmd>call VSCodeNotify('workbench.action.previousEditor')<cr>")
     vim.keymap.set("n", "<leader>bb", "<cmd>call VSCodeNotify('workbench.action.quickOpen')<cr>")
     vim.keymap.set("n", "<leader>bd", "<cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<cr>")
     vim.keymap.set("n", "<leader>bO", "<cmd>call VSCodeNotify('workbench.action.closeOtherEditors')<cr>")
@@ -48,4 +48,9 @@ vim.api.nvim_exec([[
     augroup END
 ]], false)
 
-return {}
+return {
+  {
+    "nvim-treesitter/nvim-treesitter",
+    opts = { highlight = { enable = true } },
+  },
+}
