@@ -38,7 +38,7 @@ return {
       table.insert(dashboard.opts.layout, #dashboard.opts.layout, { type = "padding", val = 1}) -- insert a padding above footer
     end,
     keys = {
-      { "<leader>;", '<Cmd>lua require("alpha").start() <CR>', desc = "Dashboard" },
+      { "<leader>D", '<Cmd>lua require("alpha").start() <CR>', desc = "Dashboard" },
     }
   },
   {
