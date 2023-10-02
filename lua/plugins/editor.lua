@@ -65,6 +65,12 @@ return {
     },
   },
   {
+    "echasnovski/mini.bufremove",
+    keys = {
+      { "<leader>bD", false },
+    },
+  },
+  {
     "smoka7/multicursors.nvim",
     version = "*",
     event = "VeryLazy",
