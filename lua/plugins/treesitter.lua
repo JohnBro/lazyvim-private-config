@@ -45,7 +45,6 @@ return {
         "javascript",
         "json",
         "jsonc",
-        "kconfig",
         "kotlin",
         "lua",
         "luadoc",
@@ -59,7 +58,6 @@ return {
         "typescript",
         "vim",
         "vimdoc",
-        "xml",
         "yaml",
       }
       opts.incremental_selection = {
