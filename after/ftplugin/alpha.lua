@@ -1,1 +1,3 @@
-vim.cmd("setlocal nocursorline nocursorcolumn")
+vim.cmd [[
+  setlocal nocursorline nocursorcolumn
+]]

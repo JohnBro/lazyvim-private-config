@@ -5,3 +5,4 @@ opt_local.tabstop = 4
 opt_local.shiftwidth = 4
 opt_local.expandtab = false
 opt_local.textwidth = 120
+opt_local.conceallevel = 0

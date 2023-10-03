@@ -1,1 +1,8 @@
-vim.cmd("setlocal nowrap tabstop=4 shiftwidth=4 softtabstop=4 expandtab textwidth=120")
+local opt_local = vim.opt_local
+
+opt_local.wrap = false
+opt_local.tabstop = 4
+opt_local.shiftwidth = 4
+opt_local.expandtab = true
+opt_local.softtabstop = 4
+opt_local.textwidth = 120
