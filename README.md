@@ -11,29 +11,33 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
   - [Keymaps](#keymaps)
     - [General](#general)
     - [LSP](#lsp)
-    - [bufferline.nvim](#bufferlinenvim)
-    - [flash.nvim](#flashnvim)
-    - [Mason.nvim](#masonnvim)
-    - [mini.bufremove](#minibufremove)
-    - [mini.pairs](#minipairs)
-    - [mini.surround](#minisurround)
-    - [neo-tree.nvim](#neo-treenvim)
-    - [noice.nvim](#noicenvim)
-    - [nvim-notify](#nvim-notify)
-    - [nvim-spectre](#nvim-spectre)
-    - [nvim-treesitter](#nvim-treesitter)
-    - [persistence.nvim](#persistencenvim)
-    - [telescope.nvim](#telescopenvim)
-    - [todo-comments.nvim](#todo-commentsnvim)
-    - [trouble.nvim](#troublenvim)
-    - [vim-illuminate](#vim-illuminate)
-    - [edgy.nvim](#edgynvim)
-    - [project.nvim](#projectnvim)
-    - [VSCode-Neovim](#vscode-neovim)
+    - [bufferline.nvim #Ui](#bufferlinenvim-ui)
+    - [flash.nvim #Plugins #Editor](#flashnvim-plugins-editor)
+    - [Mason.nvim #Plugins #Lsp](#masonnvim-plugins-lsp)
+    - [mini.bufremove #Plugins #Editor](#minibufremove-plugins-editor)
+    - [mini.pairs #Plugins #Coding](#minipairs-plugins-coding)
+    - [mini.surround #Plugins #Coding](#minisurround-plugins-coding)
+    - [neo-tree.nvim #Plugins #Editor](#neo-treenvim-plugins-editor)
+    - [noice.nvim #Plugins #Ui](#noicenvim-plugins-ui)
+    - [nvim-notify #Plugins #Ui](#nvim-notify-plugins-ui)
+    - [nvim-spectre #Plugins #Editor](#nvim-spectre-plugins-editor)
+    - [nvim-treesitter #Plugins #Treesitter](#nvim-treesitter-plugins-treesitter)
+    - [persistence.nvim #Plugins #Util](#persistencenvim-plugins-util)
+    - [telescope.nvim #Plugins #Editor](#telescopenvim-plugins-editor)
+    - [todo-comments.nvim #Plugins #Editor](#todo-commentsnvim-plugins-editor)
+    - [trouble.nvim #Plugins #Editor](#troublenvim-plugins-editor)
+    - [vim-illuminate #Plugins #Editor](#vim-illuminate-plugins-editor)
+    - [edgy.nvim #Extras #Ui](#edgynvim-extras-ui)
+    - [project.nvim #Extras #Util](#projectnvim-extras-util)
+    - [VSCode-Neovim #Extras #VSCode](#vscode-neovim-extras-vscode)
+    - [multicursors.nvim #User #Editor](#multicursorsnvim-user-editor)
   - [Confiugration](#confiugration)
+    - [Dashboard](#dashboard)
     - [Vscode](#vscode)
 
 ## Installation
+
+![dashboard](./.assert/image.png)
 
 ### Prerequisites
 
@@ -93,6 +97,8 @@ to <https://www.lazyvim.org/keymaps>.
 
 ### General
 
+**Note that** general keymaps won't take effect in vscode mode.
+
 | Key                                             | Description                           | Mode               | Note                |
 | :---------------------------------------------- | :------------------------------------ | :----------------- | :------------------ |
 | **`jk`**                                        | Enter normal mode                     | `i`                | New add             |
@@ -133,9 +139,10 @@ to <https://www.lazyvim.org/keymaps>.
 | **`]<Tab>`**, `<leader><tab>]`                  | Next tab                              | `n`                | Modify from LazyVim |
 | **`[<Tab>`**, `<leader><tab>[`                  | Previous tab                          | `n`                | Modify LazyVim      |
 | `<leader><tab>d`                                | Close tab                             | `n`                | Keep with LazyVim   |
-| **<C-a>**                                       | `<C-b>`, move to beginning            | `c`                | New add             |
-| **<Up>**                                        | `<C-p>`, Previous select              | `c`                | New add             |
-| **<Down>**                                      | `<C-n>`, Next select                  | `c`                | New add             |
+| **`<C-a>`**                                     | `<C-b>`, move to beginning            | `c`                | New add             |
+| **`<Up>`**                                      | `<C-p>`, Previous select              | `c`                | New add             |
+| **`<Down>`**                                    | `<C-n>`, Next select                  | `c`                | New add             |
+| **`<leader>D`**                                 | Dashboard                             | `n`                | New add             |
 
 ### LSP
 
@@ -163,7 +170,7 @@ to <https://www.lazyvim.org/keymaps>.
 | `<leader>cA` | Source Action          | `n`      |
 | `<leader>cr` | Rename                 | `n`      |
 
-### [bufferline.nvim](https://github.com/akinsho/bufferline.nvim.git)
+### [bufferline.nvim](https://github.com/akinsho/bufferline.nvim.git) #Ui
 
 |       Key        |        Description        | Mode |
 | :--------------- | :------------------------ | :--- |
@@ -179,7 +186,7 @@ to <https://www.lazyvim.org/keymaps>.
 | `<leader>bD`     | Sort by Directory         | `n`  |
 | `<leader>bL`     | Sort by Language          | `n`  |
 
-### [flash.nvim](https://github.com/folke/flash.nvim.git)
+### [flash.nvim](https://github.com/folke/flash.nvim.git) #Plugins #Editor
 
 |   Key   |     Description     |     Mode      |
 | :------ | :------------------ | :------------ |
@@ -189,26 +196,26 @@ to <https://www.lazyvim.org/keymaps>.
 | `R`     | Treesitter Search   | `o`, `x`      |
 | `<c-s>` | Toggle Flash Search | `c`           |
 
-### [Mason.nvim](https://github.com/williamboman/mason.nvim.git)
+### [Mason.nvim](https://github.com/williamboman/mason.nvim.git) #Plugins #Lsp
 
 |     Key      | Description | Mode |
 | :----------- | :---------- | :--- |
 | `<leader>cm` | Mason       | `n`  |
 
-### [mini.bufremove](https://github.com/echasnovski/mini.bufremove.git)
+### [mini.bufremove](https://github.com/echasnovski/mini.bufremove.git) #Plugins #Editor
 
-|     Key      |      Description      | Mode |
-| :----------- | :-------------------- | :--- |
-| `<leader>bd` | Delete Buffer         | `n`  |
-| `<leader>bD` | Delete Buffer (Force) | `n`  |
+| Key              | Description           | Mode |
+| :--------------- | :-------------------- | :--- |
+| `<leader>bd`     | Delete Buffer         | `n`  |
+| ~~`<leader>bD`~~ | Delete Buffer (Force) | `n`  |
 
-### [mini.pairs](https://github.com/echasnovski/mini.pairs.git)
+### [mini.pairs](https://github.com/echasnovski/mini.pairs.git) #Plugins #Coding
 
 |     Key      |    Description    | Mode |
 | :----------- | :---------------- | :--- |
 | `<leader>up` | Toggle auto pairs | `n`  |
 
-### [mini.surround](https://github.com/echasnovski/mini.surround.git)
+### [mini.surround](https://github.com/echasnovski/mini.surround.git) #Plugins #Coding
 
 |         Key          |            Description             |   Mode   |
 | :------------------- | :--------------------------------- | :------- |
@@ -220,7 +227,7 @@ to <https://www.lazyvim.org/keymaps>.
 | ~~`gzr`~~, **`gsr`** | Replace surrounding                | `n`      |
 | ~~`gzn`~~, **`gsn`** | Update MiniSurround.config.n_lines | `n`      |
 
-### [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim.git)
+### [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim.git) #Plugins #Editor
 
 |     Key      |         Description         | Mode |
 | :----------- | :-------------------------- | :--- |
@@ -229,7 +236,7 @@ to <https://www.lazyvim.org/keymaps>.
 | `<leader>e`  | Explorer NeoTree (root dir) | `n`  |
 | `<leader>E`  | Explorer NeoTree (cwd)      | `n`  |
 
-### [noice.nvim](https://github.com/folke/noice.nvim.git)
+### [noice.nvim](https://github.com/folke/noice.nvim.git) #Plugins #Ui
 
 |      Key      |    Description     |     Mode      |
 | :------------ | :----------------- | :------------ |
@@ -241,26 +248,26 @@ to <https://www.lazyvim.org/keymaps>.
 | `<c-f>`       | Scroll forward     | `i`, `n`, `s` |
 | `<c-b>`       | Scroll backward    | `i`, `n`, `s` |
 
-### [nvim-notify](https://github.com/rcarriga/nvim-notify.git)
+### [nvim-notify](https://github.com/rcarriga/nvim-notify.git) #Plugins #Ui
 
 |     Key      |        Description        | Mode |
 | :----------- | :------------------------ | :--- |
 | `<leader>un` | Dismiss all Notifications | `n`  |
 
-### [nvim-spectre](https://github.com/nvim-pack/nvim-spectre.git)
+### [nvim-spectre](https://github.com/nvim-pack/nvim-spectre.git) #Plugins #Editor
 
 |     Key      |        Description         | Mode |
 | :----------- | :------------------------- | :--- |
 | `<leader>sr` | Replace in files (Spectre) | `n`  |
 
-### [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter.git)
+### [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter.git) #Plugins #Treesitter
 
 |     Key     |     Description     | Mode |
 | :---------- | :------------------ | :--- |
 | `<c-space>` | Increment selection | `n`  |
 | `<bs>`      | Decrement selection | `x`  |
 
-### [persistence.nvim](https://github.com/folke/persistence.nvim.git)
+### [persistence.nvim](https://github.com/folke/persistence.nvim.git) #Plugins #Util
 
 |     Key      |        Description         | Mode |
 | :----------- | :------------------------- | :--- |
@@ -268,7 +275,7 @@ to <https://www.lazyvim.org/keymaps>.
 | `<leader>ql` | Restore Last Session       | `n`  |
 | `<leader>qd` | Don't Save Current Session | `n`  |
 
-### [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git)
+### [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim.git) #Plugins #Editor
 
 |                Key                 |       Description        | Mode |
 | :--------------------------------- | :----------------------- | :--- |
@@ -309,7 +316,7 @@ to <https://www.lazyvim.org/keymaps>.
 | **`<leader>hP`**                   | Find Plugin Files        | `n`  |
 | **`<leader>fb`**                   | Telescope file_browser   | `n`  |
 
-### [todo-comments.nvim](https://github.com/folke/todo-comments.nvim.git)
+### [todo-comments.nvim](https://github.com/folke/todo-comments.nvim.git) #Plugins #Editor
 
 |     Key      |       Description        | Mode |
 | :----------- | :----------------------- | :--- |
@@ -320,7 +327,7 @@ to <https://www.lazyvim.org/keymaps>.
 | `<leader>st` | Todo                     | `n`  |
 | `<leader>sT` | Todo/Fix/Fixme           | `n`  |
 
-### [trouble.nvim](https://github.com/folke/trouble.nvim.git)
+### [trouble.nvim](https://github.com/folke/trouble.nvim.git) #Plugins #Editor
 
 |     Key      |           Description           | Mode |
 | :----------- | :------------------------------ | :--- |
@@ -331,14 +338,14 @@ to <https://www.lazyvim.org/keymaps>.
 | `[q`         | Previous trouble/quickfix item  | `n`  |
 | `]q`         | Next trouble/quickfix item      | `n`  |
 
-### [vim-illuminate](https://github.com/RRethy/vim-illuminate.git)
+### [vim-illuminate](https://github.com/RRethy/vim-illuminate.git) #Plugins #Editor
 
 | Key  |  Description   | Mode |
 | :--- | :------------- | :--- |
 | `]]` | Next Reference | n    |
 | `[[` | Prev Reference | n    |
 
-### [edgy.nvim](https://github.com/folke/edgy.nvim.git)
+### [edgy.nvim](https://github.com/folke/edgy.nvim.git) #Extras #Ui
 
 Part of [lazyvim.plugins.extras.ui.edgy](https://www.lazyvim.org/extras/ui/edgy).
 
@@ -347,7 +354,7 @@ Part of [lazyvim.plugins.extras.ui.edgy](https://www.lazyvim.org/extras/ui/edgy)
 | `<leader>ue` | Edgy Toggle        | `n`  |
 | `<leader>uE` | Edgy Select Window | `n`  |
 
-### [project.nvim](https://github.com/ahmedkhalf/project.nvim.git)
+### [project.nvim](https://github.com/ahmedkhalf/project.nvim.git) #Extras #Util
 
 Part of [lazyvim.plugins.extras.util.project](https://www.lazyvim.org/extras/util/project)
 
@@ -355,21 +362,44 @@ Part of [lazyvim.plugins.extras.util.project](https://www.lazyvim.org/extras/uti
 | :----------- | :---------- | :--- |
 | `<leader>fp` | Projects    | `n`  |
 
-### [VSCode-Neovim](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim)
+### [VSCode-Neovim](https://marketplace.visualstudio.com/items?itemName=asvetliakov.vscode-neovim) #Extras #VSCode
 
-| Key          | Description               | Mode |
-| :----------- | :------------------------ | :--- |
-| `<tab>`      | Toggle fold               | `n`  |
-| `<leader>bn` | Next Editor               | `n`  |
-| `<leader>bp` | Previous Editor           | `n`  |
-| `<leader>bb` | Quick Open                | `n`  |
-| `<leader>bd` | Close Active Editor       | `n`  |
-| `<leader>bO` | Close Other Editors       | `n`  |
-| `<leader>ul` | Toggle sidebar visibility | `n`  |
-| `<leader>ur` | Toggle right sidebar      | `n`  |
-| `<leader>ua` | Toggle Activity bar       | `n`  |
+| Key               | Description               | Mode |
+| :---------------- | :------------------------ | :--- |
+| `<leader><space>` | Find                      | `n`  |
+| `<leader>/`       | Find in file              | `n`  |
+| `<leader>ss`      | Go to symbol              | `n`  |
+| **`<tab>`**       | Toggle fold               | `n`  |
+| **`za`**          | Toggle fold               | `n`  |
+| **`zc`**          | Fold                      | `n`  |
+| **`zC`**          | Fola all                  | `n`  |
+| **`zo`**          | Unfold                    | `n`  |
+| **`zO`**          | Unfold                    | `n`  |
+| **`zR`**          | Unfold Recursively        | `n`  |
+| **`j`**           | `gj`                      | `n`  |
+| **`k`**           | `gk`                      | `n`  |
+| **`<leader>bn`**  | Next Editor               | `n`  |
+| **`<leader>bp`**  | Previous Editor           | `n`  |
+| **`<leader>bb`**  | Quick Open                | `n`  |
+| **`<leader>bd`**  | Close Active Editor       | `n`  |
+| **`<leader>bO`**  | Close Other Editors       | `n`  |
+| **`<leader>ul`**  | Toggle sidebar visibility | `n`  |
+| **`<leader>ur`**  | Toggle right sidebar      | `n`  |
+| **`<leader>ua`**  | Toggle Activity bar       | `n`  |
+
+### [multicursors.nvim](https://github.com/smoka7/multicursors.nvim) #User #Editor
+
+| Key         | Description                 | Mode     |
+| :---------- | :-------------------------- | :------- |
+| **`<C-n>`** | Multicursor start to select | `n`, `v` |
 
 ## Confiugration
+
+### Dashboard
+
+Please refer to [ui.lua](./lua/plugins/ui.lua). Modified from LazyVim:
+1. Change the dashboard logo to what i like.
+2. Add more startup menu item and decrease the padding.
 
 ### Vscode
 
@@ -399,4 +429,4 @@ local enabled = {
   "LazyVim",
 }
 ```
-Please check `plugins/vscode.lua` for my customization for vscode.
+Please check [plugins/vscode.lua](./lua/plugins/vscode.lua) for my customization for vscode.

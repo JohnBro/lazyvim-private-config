@@ -12,16 +12,25 @@ vim.api.nvim_create_autocmd("User", {
     -- vim.keymap.set("n", "<leader><space>", "<cmd>Find<cr>")
     -- vim.keymap.set("n", "<leader>/", [[<cmd>call VSCodeNotify('workbench.action.findInFiles')<cr>]])
     -- vim.keymap.set("n", "<leader>ss", [[<cmd>call VSCodeNotify('workbench.action.gotoSymbol')<cr>]])
-    vim.keymap.set("n", "gr", "<cmd>call VSCodeNotify('references-view.findReferences')<cr>")
-    vim.keymap.set("n", "<Tab>", "<cmd>call VSCodeNotify('editor.toggleFold')<cr>")
-    vim.keymap.set("n", "<leader>bn", "<cmd>call VSCodeNotify('workbench.action.nextEditor')<cr>")
-    vim.keymap.set("n", "<leader>bp", "<cmd>call VSCodeNotify('workbench.action.previousEditor')<cr>")
-    vim.keymap.set("n", "<leader>bb", "<cmd>call VSCodeNotify('workbench.action.quickOpen')<cr>")
-    vim.keymap.set("n", "<leader>bd", "<cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<cr>")
-    vim.keymap.set("n", "<leader>bO", "<cmd>call VSCodeNotify('workbench.action.closeOtherEditors')<cr>")
-    vim.keymap.set("n", "<leader>ul", "<cmd>call VSCodeNotify('workbench.action.toggleSidebarVisibility')<cr>")
-    vim.keymap.set("n", "<leader>ur", "<cmd>call VSCodeNotify('workbench.action.toggleAuxiliaryBar')<cr>")
-    vim.keymap.set("n", "<leader>ua", "<cmd>call VSCodeNotify('workbench.action.toggleActivityBarVisibility')<cr>")
+    -- map j/k to gj/gk, refer to https://github.com/vscode-neovim/vscode-neovim/blob/master/vim/vscode-motion.vim
+    vim.keymap.set({ "n", "x" }, "j", "<Cmd>call VSCodeNotify('cursorMove', { 'to': 'down', 'by': 'wrappedLine', 'value': v:count1 })<CR>")
+    vim.keymap.set("n", "za", "<cmd>call VSCodeNotify('editor.toggleFold')<CR>")
+    vim.keymap.set("n", "zc", "<Cmd>call VSCodeNotify('editor.fold')<CR>")
+    vim.keymap.set("n", "zC", "<Cmd>call VSCodeNotify('editor.foldAll')<CR>")
+    vim.keymap.set("n", "zo", "<Cmd>call VSCodeNotify('editor.unfold')<CR>")
+    vim.keymap.set("n", "zO", "<Cmd>call VSCodeNotify('editor.unfoldAll')<CR>")
+    vim.keymap.set("n", "zR", "<Cmd>call VSCodeNotify('editor.unfoldRecursively')<CR>")
+    vim.keymap.set({ "n", "x" }, "k", "<Cmd>call VSCodeNotify('cursorMove', { 'to': 'up', 'by': 'wrappedLine', 'value': v:count1 })<CR>")
+    vim.keymap.set("n", "gr", "<cmd>call VSCodeNotify('references-view.findReferences')<CR>")
+    vim.keymap.set("n", "<Tab>", "<cmd>call VSCodeNotify('editor.toggleFold')<CR>")
+    vim.keymap.set("n", "<leader>bn", "<cmd>call VSCodeNotify('workbench.action.nextEditor')<CR>")
+    vim.keymap.set("n", "<leader>bp", "<cmd>call VSCodeNotify('workbench.action.previousEditor')<CR>")
+    vim.keymap.set("n", "<leader>bb", "<cmd>call VSCodeNotify('workbench.action.quickOpen')<CR>")
+    vim.keymap.set("n", "<leader>bd", "<cmd>call VSCodeNotify('workbench.action.closeActiveEditor')<CR>")
+    vim.keymap.set("n", "<leader>bO", "<cmd>call VSCodeNotify('workbench.action.closeOtherEditors')<CR>")
+    vim.keymap.set("n", "<leader>ul", "<cmd>call VSCodeNotify('workbench.action.toggleSidebarVisibility')<CR>")
+    vim.keymap.set("n", "<leader>ur", "<cmd>call VSCodeNotify('workbench.action.toggleAuxiliaryBar')<CR>")
+    vim.keymap.set("n", "<leader>ua", "<cmd>call VSCodeNotify('workbench.action.toggleActivityBarVisibility')<CR>")
   end,
 })
 
@@ -48,9 +57,4 @@ vim.api.nvim_exec([[
     augroup END
 ]], false)
 
-return {
-  {
-    "nvim-treesitter/nvim-treesitter",
-    opts = { highlight = { enable = true } },
-  },
-}
+return {}
