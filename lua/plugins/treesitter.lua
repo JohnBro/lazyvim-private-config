@@ -20,6 +20,7 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
+    version = "*",
     dependencies = { "HiPhish/nvim-ts-rainbow2" },
     rainbow = { enable = true },
     opts = function(_, opts)
