@@ -58,7 +58,8 @@ return {
     "folke/which-key.nvim",
     opts = {
       defaults = {
-        ["gs"] = { name = "+surround" },
+        ["ga"] = { name = "+Align" },
+        ["gs"] = { name = "+Surround" },
         ["<leader>h"] = { name = "+help" },
         ["<leader>w"] = { name = "+window" },
         ["<leader>ug"] = { name = "+Gitsigns" },
@@ -92,5 +93,48 @@ return {
     keys = {
       { mode = { "n", "v"}, "<c-n>", "<cmd>MCstart<cr>", desc = "Multicursor Start" },
     },
+  },
+  {
+    "Vonr/align.nvim",
+    event = "VeryLazy",
+    config = function()
+      -- Refer to https://github.com/Vonr/align.nvim
+      local a = require('align')
+
+      local function map(mode, l, r, desc)
+        vim.keymap.set(mode, l, r, { noremap = true, silent = true, desc = desc })
+      end
+
+      map('x', 'gaa', function() a.align_to_char(1, true)             end, "Align to a character")   -- Aligns to 1 character, looking left
+      map('x', 'gas', function() a.align_to_char(2, true, true)       end, "Align to 2 characters")  -- Aligns to 2 characters, looking left and with previews
+      map('x', 'gaw', function() a.align_to_string(false, true, true) end, "Align to a string")      -- Aligns to a string, looking left and with previews
+      map('x', 'gar', function() a.align_to_string(true, true, true)  end, "Align to a lua pattern") -- Aligns to a Lua pattern, looking left and with previews
+
+      -- Example gawip to align a paragraph to a string, looking left and with previews
+      map(
+        'n',
+        'gaw',
+        function()
+          a.operator(
+            a.align_to_string,
+            { is_pattern = false, reverse = true, preview = true }
+          )
+        end,
+        "Align to a string"
+      )
+
+      -- Example gaaip to aling a paragraph to 1 character, looking left
+      map(
+        'n',
+        'gaa',
+        function()
+          a.operator(
+            a.align_to_char,
+            { length = 1, reverse = true }
+          )
+        end,
+        "Align to a character"
+      )
+    end,
   },
 }

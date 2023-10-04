@@ -31,10 +31,16 @@ unmap("n", "<leader>L")
 
 -- basic mappings
 map("i", "jk", "<Esc>", { remap = true })
+map("n", "n", "nzz")
+map("n", "N", "Nzz")
+map("n", "G", "Gzz")
+map("n", "{", "{zz")
+map("n", "}", "}zz")
 
 -- buffers
 map("n", "<leader>bo", "<cmd>e #<cr>", { desc = "Switch Other Buffer" })
 
+-- Fix for not work in plugin `keys` mappings
 if Util.has("telescope.nvim") then
   map("n", "<leader>bb", "<cmd>Telescope buffers show_all_buffers=true <cr>", { desc = "Switch Buffer" })
 end
