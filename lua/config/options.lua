@@ -34,11 +34,11 @@ vim.opt.formatoptions = {
 vim.opt.guifont = "FiraCode Nerd Font Mono:h12" -- the font used in graphical neovim applications
 vim.opt.list = true
 vim.opt.listchars = {
-  eol = nil,
-  tab = "│ ",
-  extends = "›", -- Alternatives: … »
-  precedes = "‹", -- Alternatives: … «
+  eol = " ", -- Alternatives: ↵, ↩, ⏎
+  tab = "│ ", -- Alternatives: ⇥, »
+  extends = "›", -- Alternatives: … » precedes = "‹", -- Alternatives: … «
   trail = "•", -- BULLET (U+2022, UTF-8: E2 80 A2)
+  nbsp = "␣",
 }
 vim.opt.pumblend = 20
 vim.opt.undodir = join_paths(vim.fn.stdpath("cache"), "undo")
@@ -109,6 +109,7 @@ elseif vim.fn.has("wsl") == 1 then
         ["+"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
         ["*"] = 'powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
       },
+      cache_enabled = 0,
     }
   end
 end

@@ -61,7 +61,17 @@ return {
         ["gs"] = { name = "+surround" },
         ["<leader>h"] = { name = "+help" },
         ["<leader>w"] = { name = "+window" },
+        ["<leader>ug"] = { name = "+Gitsigns" },
       },
+    },
+  },
+  {
+    "lewis6991/gitsigns.nvim",
+    keys = {
+      { "<leader>ugb", "<cmd>Gitsigns toggle_current_line_blame<cr>", desc = "Toggle line blame" },
+      { "<leader>ugg", "<cmd>Gitsigns toggle_word_diff<cr><cmd>Gitsigns toggle_deleted<cr>", desc = "Toggle diff" },
+      { "<leader>ugn", "<cmd>Gitsigns toggle_numhl<cr>", desc = "Toggle number highlight" },
+      { "<leader>ugl", "<cmd>Gitsigns toggle_linehl<cr>", desc = "Toggle line highlight" },
     },
   },
   {
