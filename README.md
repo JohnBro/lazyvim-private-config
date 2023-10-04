@@ -27,6 +27,7 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
     - [todo-comments.nvim #Plugins #Editor](#todo-commentsnvim-plugins-editor)
     - [trouble.nvim #Plugins #Editor](#troublenvim-plugins-editor)
     - [vim-illuminate #Plugins #Editor](#vim-illuminate-plugins-editor)
+    - [gitsigns.nvim #Plugins #Editor](#gitsignsnvim-plugins-editor)
     - [edgy.nvim #Extras #Ui](#edgynvim-extras-ui)
     - [project.nvim #Extras #Util](#projectnvim-extras-util)
     - [VSCode-Neovim #Extras #VSCode](#vscode-neovim-extras-vscode)
@@ -344,6 +345,27 @@ to <https://www.lazyvim.org/keymaps>.
 | :--- | :------------- | :--- |
 | `]]` | Next Reference | n    |
 | `[[` | Prev Reference | n    |
+
+### [gitsigns.nvim](https://github.com/lewis6991/gitsigns.nvim) #Plugins #Editor
+
+| Key               | Description                  | Mode     |
+| :---------------- | :--------------------------- | :------- |
+| `]h`              | Next hunk                    | `n`      |
+| `[h`              | Previous hunk                | `n`      |
+| `<leader>ghb`     | blame line with float window | `n`      |
+| `<leader>ghd`     | Diff this                    | `n`      |
+| `<leader>ghD`     | Diff this ~                  | `n`      |
+| `<leader>ghp`     | Preview hunk                 | `n`      |
+| `<leader>ghr`     | Reset hunk                   | `n`, `v` |
+| `<leader>ghR`     | Reset buffer                 | `n`      |
+| `<leader>ghs`     | Stage hunk                   | `n`, `v` |
+| `<leader>ghS`     | Stage buffer                 | `n`      |
+| `<leader>ghu`     | Undo stage hunk              | `n`      |
+| `ih`              | Select hunk                  | `x`, `o` |
+| **`<leader>ugb`** | toogle line blame            | `n`      |
+| **`<leader>ugg`** | toggle diff inline           | `n`      |
+| **`<leader>ugl`** | toggle line highlight        | `n`      |
+| **`<leader>ugn`** | toggle number hightlight     | `n`      |
 
 ### [edgy.nvim](https://github.com/folke/edgy.nvim.git) #Extras #Ui
 
