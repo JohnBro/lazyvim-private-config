@@ -89,7 +89,7 @@ return {
       'smoka7/hydra.nvim',
     },
     opts = {},
-    cmd  = { 'mcstart', 'mcvisual', 'mcclear', 'mcpattern', 'mcvisualpattern', 'mcundercursor' },
+    cmd  = { 'MCstart', 'MCvisual', 'MCclear', 'MCpattern', 'MCvisualPattern', 'MCunderCursor' },
     keys = {
       { mode = { "n", "v"}, "<c-n>", "<cmd>MCstart<cr>", desc = "Multicursor Start" },
     },
@@ -97,6 +97,7 @@ return {
   {
     "Vonr/align.nvim",
     event  = "VeryLazy",
+    cond   = vim.g.vscode,
     config = function()
       -- Refer to https://github.com/Vonr/align.nvim
       local a = require('align')
