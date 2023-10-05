@@ -1,6 +1,6 @@
 # 💤 LazyVim
 
-A starter template for [LazyVim](https://github.com/LazyVim/LazyVim).
+This is my private confif with [LazyVim](https://github.com/LazyVim/LazyVim).
 Refer to the [documentation](https://lazyvim.github.io/installation) to get started.
 
 - [💤 LazyVim](#-lazyvim)
@@ -12,16 +12,18 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
     - [General](#general)
     - [LSP](#lsp)
     - [bufferline.nvim #Ui](#bufferlinenvim-ui)
-    - [flash.nvim #Plugins #Editor](#flashnvim-plugins-editor)
+    - [flash.nvim #Plugins #Editor #VSCode](#flashnvim-plugins-editor-vscode)
     - [Mason.nvim #Plugins #Lsp](#masonnvim-plugins-lsp)
     - [mini.bufremove #Plugins #Editor](#minibufremove-plugins-editor)
     - [mini.pairs #Plugins #Coding](#minipairs-plugins-coding)
-    - [mini.surround #Plugins #Coding](#minisurround-plugins-coding)
+    - [mini.surround #Plugins #Coding #VSCode](#minisurround-plugins-coding-vscode)
+    - [mini.comment #Plugins #Coding #VSCode](#minicomment-plugins-coding-vscode)
     - [neo-tree.nvim #Plugins #Editor](#neo-treenvim-plugins-editor)
     - [noice.nvim #Plugins #Ui](#noicenvim-plugins-ui)
     - [nvim-notify #Plugins #Ui](#nvim-notify-plugins-ui)
     - [nvim-spectre #Plugins #Editor](#nvim-spectre-plugins-editor)
     - [nvim-treesitter #Plugins #Treesitter](#nvim-treesitter-plugins-treesitter)
+    - [nvim-treesitter-textobjects #Plugins #Treesitter #VSCode](#nvim-treesitter-textobjects-plugins-treesitter-vscode)
     - [persistence.nvim #Plugins #Util](#persistencenvim-plugins-util)
     - [telescope.nvim #Plugins #Editor](#telescopenvim-plugins-editor)
     - [todo-comments.nvim #Plugins #Editor](#todo-commentsnvim-plugins-editor)
@@ -32,6 +34,7 @@ Refer to the [documentation](https://lazyvim.github.io/installation) to get star
     - [project.nvim #Extras #Util](#projectnvim-extras-util)
     - [VSCode-Neovim #Extras #VSCode](#vscode-neovim-extras-vscode)
     - [multicursors.nvim #User #Editor](#multicursorsnvim-user-editor)
+    - [align.nvim #User #Editor #VSCode](#alignnvim-user-editor-vscode)
   - [Confiugration](#confiugration)
     - [Dashboard](#dashboard)
     - [Vscode](#vscode)
@@ -102,7 +105,14 @@ to <https://www.lazyvim.org/keymaps>.
 
 | Key                                             | Description                           | Mode               | Note                |
 | :---------------------------------------------- | :------------------------------------ | :----------------- | :------------------ |
+| **`n`**                                         | Motion with `zz`                      | `nzz`              | New add             |
+| **`N`**                                         | Motion with `zz`                      | `Nzz`              | New add             |
+| **`G`**                                         | Motion with `zz`                      | `Gzz`              | New add             |
+| **`{`**                                         | Motion with `zz`                      | `{zz`              | New add             |
+| **`}`**                                         | Motion with `zz`                      | `i`                | New add             |
 | **`jk`**                                        | Enter normal mode                     | `i`                | New add             |
+| `j`                                             | Motion with `g`                       | `gj`               | Keep with LazyVim   |
+| `k`                                             | Motion with `g`                       | `gk`               | Keep with LazyVim   |
 | `<C-h>`,`<C-j>`,`<C-k>`, `<C-l>`                | Window motion                         | `n`,`t`            | Keep with LazyVim   |
 | `<C-Up>`, `<C-Down>`, `<C-Left>`, `<C-Right>`   | Window width/height adjustment        | `n`                | Keep with LazyVim   |
 | `<A-j>`, `<A-k>`                                | Move down/up                          | `n`, `i`, `v`      | Keep with LazyVim   |
@@ -187,7 +197,7 @@ to <https://www.lazyvim.org/keymaps>.
 | `<leader>bD`     | Sort by Directory         | `n`  |
 | `<leader>bL`     | Sort by Language          | `n`  |
 
-### [flash.nvim](https://github.com/folke/flash.nvim.git) #Plugins #Editor
+### [flash.nvim](https://github.com/folke/flash.nvim.git) #Plugins #Editor #VSCode
 
 |   Key   |     Description     |     Mode      |
 | :------ | :------------------ | :------------ |
@@ -216,7 +226,7 @@ to <https://www.lazyvim.org/keymaps>.
 | :----------- | :---------------- | :--- |
 | `<leader>up` | Toggle auto pairs | `n`  |
 
-### [mini.surround](https://github.com/echasnovski/mini.surround.git) #Plugins #Coding
+### [mini.surround](https://github.com/echasnovski/mini.surround.git) #Plugins #Coding #VSCode
 
 | Key   | Description                        | Mode     |
 | :---- | :--------------------------------- | :------- |
@@ -227,6 +237,13 @@ to <https://www.lazyvim.org/keymaps>.
 | `gsh` | Highlight surrounding              | `n`      |
 | `gsr` | Replace surrounding                | `n`      |
 | `gsn` | Update MiniSurround.config.n_lines | `n`      |
+
+### [mini.comment](https://github.com/echasnovski/mini.comment) #Plugins #Coding #VSCode
+
+| Key   | Description                                | Mode          |
+| ----- | ------------------------------------------ | ------------- |
+| `gc`  | Toggle comment for a text or selected text | `n`, `x`, `o` |
+| `gcc` | Toggle comment a line                      | `n`           |
 
 ### [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim.git) #Plugins #Editor
 
@@ -263,10 +280,18 @@ to <https://www.lazyvim.org/keymaps>.
 
 ### [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter.git) #Plugins #Treesitter
 
-|     Key     |     Description     | Mode |
-| :---------- | :------------------ | :--- |
-| `<c-space>` | Increment selection | `n`  |
-| `<bs>`      | Decrement selection | `x`  |
+| Key                          | Description           | Mode |
+| :--------------------------- | :-------------------- | :--- |
+| ~~`<c-space>`~~, **<Enter>** | Incremental selection | `n`  |
+| `<bs>`                       | Decrement selection   | `x`  |
+| `]f`                         | Next func begin       | `n`  |
+| `]F`                         | Next func end         | `n`  |
+| `[f`                         | Previous func begin   | `n`  |
+| `[F`                         | Previous func end     | `n`  |
+
+### [nvim-treesitter-textobjects](https://github.com/nvim-treesitter/nvim-treesitter-textobjects) #Plugins #Treesitter #VSCode
+
+Select, Swap, Move, ... based on text object. Please refer to <https://github.com/nvim-treesitter/nvim-treesitter-textobjects> for details.
 
 ### [persistence.nvim](https://github.com/folke/persistence.nvim.git) #Plugins #Util
 
@@ -414,6 +439,17 @@ Part of [lazyvim.plugins.extras.util.project](https://www.lazyvim.org/extras/uti
 | Key         | Description                 | Mode     |
 | :---------- | :-------------------------- | :------- |
 | **`<C-n>`** | Multicursor start to select | `n`, `v` |
+
+### [align.nvim](https://github.com/Vonr/align.nvim) #User #Editor #VSCode
+
+`ga` as the leader to align the text, can be used in VSCode.
+
+| Key       | Description            | Mode     |
+| --------- | ---------------------- | -------- |
+| **`gaa`** | Align to a char        | `n`, `x` |
+| **`gas`** | Align to 2 chars       | `x`      |
+| **`gaw`** | Align to a string      | `x`, `n` |
+| **`gar`** | Align to a lua pattern | `x`      |
 
 ## Confiugration
 
