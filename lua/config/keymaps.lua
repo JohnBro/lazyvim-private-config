@@ -30,12 +30,13 @@ unmap("n", "<leader>l")
 unmap("n", "<leader>L")
 
 -- basic mappings
-map("i", "jk", "<Esc>", { remap = true })
+map("i", "jk", "<Esc>")
 map("n", "n", "nzz")
 map("n", "N", "Nzz")
 map("n", "G", "Gzz")
 map("n", "{", "{zz")
 map("n", "}", "}zz")
+map("n", "<Tab>", "za")
 
 -- buffers
 map("n", "<leader>bo", "<cmd>e #<cr>", { desc = "Switch Other Buffer" })
@@ -46,14 +47,14 @@ if Util.has("telescope.nvim") then
 end
 
 -- tabs
-map("n", "]<Tab>", "<Cmd>tabnext<CR>", { desc = "Next <Tab>" })
+map("n", "]<Tab>", "<Cmd>tabnext<CR>",     { desc = "Next <Tab>" })
 map("n", "[<Tab>", "<Cmd>tabprevious<CR>", { desc = "Previous <Tab>" })
 
 -- command mode mappings
-map("c", "<C-a>", "<C-b>", { silent = false })
-map("c", "<Up>", "<C-p>", { silent = false })
+map("c", "<C-a>", "<C-b>",  { silent = false })
+map("c", "<Up>", "<C-p>",   { silent = false })
 map("c", "<Down>", "<C-n>", { silent = false })
 
 -- LazyVim
 map("n", '<leader>hl', "<cmd>Lazy<cr>", { desc = "Lazy" })
-map("n", "<leader>hL", Util.changelog, {desc = "LazyVim Changelog"})
+map("n", "<leader>hL", Util.changelog,  { desc = "LazyVim Changelog"})

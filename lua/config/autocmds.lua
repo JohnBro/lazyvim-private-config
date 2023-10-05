@@ -6,7 +6,7 @@ local function augroup(name)
 end
 
 local function autocmds_ignore(exclude)
-  exclude = exclude or {}
+  exclude   = exclude or {}
   local buf = vim.api.nvim_get_current_buf()
   if vim.tbl_contains(exclude, vim.bo[buf].filetype) then
     return true
@@ -17,8 +17,8 @@ end
 -- Autocmds for number display
 local numtoggle_group = augroup("numtoggle")
 vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave", "CmdlineLeave", "WinEnter" }, {
-  pattern = "*",
-  group = numtoggle_group,
+  pattern  = "*",
+  group    = numtoggle_group,
   callback = function()
     if autocmds_ignore({ "alpha", "dashbaord" }) then
       return
@@ -30,8 +30,8 @@ vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave", "Cmdline
 })
 
 vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertEnter", "CmdlineEnter", "WinLeave" }, {
-  pattern = "*",
-  group = numtoggle_group,
+  pattern  = "*",
+  group    = numtoggle_group,
   callback = function()
     if autocmds_ignore({ "alpha", "dashbaord" }) then
       return
@@ -46,8 +46,8 @@ vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertEnter", "CmdlineEn
 -- Autocmds for cursorline display
 local cursortoggle_group = augroup("cursortoggle")
 vim.api.nvim_create_autocmd({ "InsertLeave", "WinEnter" }, {
-  pattern = "*",
-  group = cursortoggle_group,
+  pattern  = "*",
+  group    = cursortoggle_group,
   callback = function()
     if autocmds_ignore({ "alpha", "dashbaord" }) then
       return
@@ -59,8 +59,8 @@ vim.api.nvim_create_autocmd({ "InsertLeave", "WinEnter" }, {
 })
 
 vim.api.nvim_create_autocmd({ "InsertEnter", "WinLeave" }, {
-  pattern = "*",
-  group = cursortoggle_group,
+  pattern  = "*",
+  group    = cursortoggle_group,
   callback = function()
     if autocmds_ignore({ "alpha", "dashbaord" }) then
       return
@@ -74,8 +74,8 @@ vim.api.nvim_create_autocmd({ "InsertEnter", "WinLeave" }, {
 -- Disable spellchecking for Markdown, https://github.com/LazyVim/LazyVim/discussions/392
 vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 vim.api.nvim_create_autocmd("FileType", {
-  group = augroup("wrap"),
-  pattern = { "gitcommit", "markdown" },
+  group    = augroup("wrap"),
+  pattern  = { "gitcommit", "markdown" },
   callback = function()
     vim.opt_local.wrap = true
   end,

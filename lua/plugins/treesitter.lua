@@ -20,14 +20,14 @@ return {
   },
   {
     "nvim-treesitter/nvim-treesitter",
-    version = "*",
+    version      = "*",
     dependencies = { "HiPhish/nvim-ts-rainbow2" },
-    rainbow = { enable = true },
-    opts = function(_, opts)
+    rainbow      = { enable = true },
+    opts         = function(_, opts)
       if not vim.g.vscode then
         opts.rainbow = {
-          enable = true,
-          query = "rainbow-parens",
+          enable   = true,
+          query    = "rainbow-parens",
           strategy = require("ts-rainbow").strategy.global,
         }
       end
@@ -61,12 +61,12 @@ return {
         "yaml",
       }
       opts.incremental_selection = {
-        enable = true,
+        enable  = true,
         keymaps = {
-          init_selection = "<Enter>",
-          node_incremental = "<Enter>",
+          init_selection    = "<Enter>",
+          node_incremental  = "<Enter>",
           scope_incremental = false,
-          node_decremental = "<bs>",
+          node_decremental  = "<bs>",
         },
       }
       opts.keys = {
