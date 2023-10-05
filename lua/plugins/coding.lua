@@ -71,19 +71,5 @@ return {
   {
     "echasnovski/mini.surround",
     version = "*",
-    keys = {
-      { "gs", desc = "vim surround" },
-    },
-    opts = {
-      mappings = {
-        add = "gsa",
-        delete = "gsd",
-        find = "gsf",
-        find_left = "gsF",
-        highlight = "gsh",
-        replace = "gsr",
-        update_n_lines = "gsn",
-      },
-    },
   },
 }

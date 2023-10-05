@@ -218,15 +218,15 @@ to <https://www.lazyvim.org/keymaps>.
 
 ### [mini.surround](https://github.com/echasnovski/mini.surround.git) #Plugins #Coding
 
-|         Key          |            Description             |   Mode   |
-| :------------------- | :--------------------------------- | :------- |
-| ~~`gza`~~, **`gsa`** | Add surrounding                    | `n`, `v` |
-| ~~`gzd`~~, **`gsd`** | Delete surrounding                 | `n`      |
-| ~~`gzf`~~, **`gsf`** | Find right surrounding             | `n`      |
-| ~~`gzF`~~, **`gsF`** | Find left surrounding              | `n`      |
-| ~~`gzh`~~, **`gsh`** | Highlight surrounding              | `n`      |
-| ~~`gzr`~~, **`gsr`** | Replace surrounding                | `n`      |
-| ~~`gzn`~~, **`gsn`** | Update MiniSurround.config.n_lines | `n`      |
+| Key   | Description                        | Mode     |
+| :---- | :--------------------------------- | :------- |
+| `gsa` | Add surrounding                    | `n`, `v` |
+| `gsd` | Delete surrounding                 | `n`      |
+| `gsf` | Find right surrounding             | `n`      |
+| `gsF` | Find left surrounding              | `n`      |
+| `gsh` | Highlight surrounding              | `n`      |
+| `gsr` | Replace surrounding                | `n`      |
+| `gsn` | Update MiniSurround.config.n_lines | `n`      |
 
 ### [neo-tree.nvim](https://github.com/nvim-neo-tree/neo-tree.nvim.git) #Plugins #Editor
 
