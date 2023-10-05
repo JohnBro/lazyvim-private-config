@@ -4,49 +4,36 @@ return {
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
-      "hrsh7th/cmp-emoji",
-      "uga-rosa/cmp-dictionary",
+      { "hrsh7th/cmp-emoji" },
+      {
+        "uga-rosa/cmp-dictionary",
+        dependencies = {
+          "Johnbro/dictionary.vim"
+        },
+        config = function()
+          local dict = require("cmp_dictionary")
+
+          dict.switcher({
+            filetype = {
+              lua = "/path/to/lua.dict",
+              javascript = { "/path/to/js.dict", "/path/to/js2.dict" },
+            },
+            filepath = {
+              [".*xmake.lua"] = { "/path/to/xmake.dict", "/path/to/lua.dict" },
+              ["%.tmux.*%.conf"] = { "/path/to/js.dict", "/path/to/js2.dict" },
+            },
+            spelllang = {
+              en = join_paths(vim.fn.stdpath("data"), "lazy", "dictionary.vim", "oald_cn.dict"),
+            },
+          })
+        end,
+      },
     },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
       local cmp = require("cmp")
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "emoji" } }))
       opts.sources = cmp.config.sources(vim.list_extend(opts.sources, { { name = "dictionary", keyword_length = 2 } }))
-    end,
-  },
-  {
-    "uga-rosa/cmp-dictionary",
-    event = "VeryLazy",
-    dependencies = {
-      "Johnbro/dictionary.vim",
-    },
-    opts = {
-        -- The following are default values.
-        exact = 2,
-        first_case_insensitive = false,
-        document = false,
-        document_command = "wn %s -over",
-        sqlite = false,
-        max_items = -1,
-        capacity = 5,
-        debug = false,
-    },
-    config = function()
-      local dict = require("cmp_dictionary")
-
-      dict.switcher({
-        filetype = {
-          lua = "/path/to/lua.dict",
-          javascript = { "/path/to/js.dict", "/path/to/js2.dict" },
-        },
-        filepath = {
-          [".*xmake.lua"] = { "/path/to/xmake.dict", "/path/to/lua.dict" },
-          ["%.tmux.*%.conf"] = { "/path/to/js.dict", "/path/to/js2.dict" },
-        },
-        spelllang = {
-          en = join_paths(vim.fn.stdpath("data"), "lazy", "dictionary.vim", "oald_cn.dict"),
-        },
-      })
     end,
   },
   -- Suertab, refer to: https://www.lazyvim.org/configuration/recipes#supertab
