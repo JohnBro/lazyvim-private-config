@@ -63,10 +63,10 @@ return {
       opts.incremental_selection = {
         enable  = true,
         keymaps = {
-          init_selection    = "<Enter>",
-          node_incremental  = "<Enter>",
+          init_selection    = "v",
+          node_incremental  = "v",
           scope_incremental = false,
-          node_decremental  = "<bs>",
+          node_decremental  = "V",
         },
       }
       opts.keys = {
