@@ -16,7 +16,6 @@ require("lazy").setup({
     { import = "lazyvim.plugins.extras.lang.clangd"  },
     { import = "lazyvim.plugins.extras.lang.python"  },
     { import = "lazyvim.plugins.extras.vscode"       },
-    { import = "lazyvim.plugins.extras.ui.edgy"      },
     { import = "plugins"                             },
   },
   defaults = {

@@ -11,19 +11,24 @@ return {
           "Johnbro/dictionary.vim"
         },
         config = function()
-          local dict = require("cmp_dictionary")
+          local dict     = require("cmp_dictionary")
+          local dict_dir = join_paths(vim.fn.stdpath("data"), "lazy", "dictionary.vim", "dict")
 
           dict.switcher({
             filetype = {
-              lua = "/path/to/lua.dict",
-              javascript = { "/path/to/js.dict", "/path/to/js2.dict" },
+              c          = join_paths(dict_dir, "c.dict"),
+              cpp        = join_paths(dict_dir, "cpp.dict"),
+              cmake      = join_paths(dict_dir, "cmake.dict"),
+              html       = join_paths(dict_dir, "html.dict"),
+              lua        = join_paths(dict_dir, "lua.dict"),
+              latex      = join_paths(dict_dir, "latex.dict"),
+              javascript = join_paths(dict_dir, "javascript.dict"),
+              python     = join_paths(dict_dir, "python.dict"),
+              sh         = join_paths(dict_dir, "sh.dict"),
             },
-            filepath = {
-              [".*xmake.lua"] = { "/path/to/xmake.dict", "/path/to/lua.dict" },
-              ["%.tmux.*%.conf"] = { "/path/to/js.dict", "/path/to/js2.dict" },
-            },
+            filepath = {},
             spelllang = {
-              en = join_paths(vim.fn.stdpath("data"), "lazy", "dictionary.vim", "oald_cn.dict"),
+              en = join_paths(dict_dir, "oald_cn.dict"),
             },
           })
         end,

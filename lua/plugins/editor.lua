@@ -97,6 +97,7 @@ return {
   {
     "Vonr/align.nvim",
     event  = "VeryLazy",
+    branch = "v2",
     cond   = vim.g.vscode,
     config = function()
       -- Refer to https://github.com/Vonr/align.nvim
@@ -106,10 +107,10 @@ return {
         vim.keymap.set(mode, l, r, { noremap = true, silent = true, desc = desc })
       end
 
-      map('x', 'gaa', function() a.align_to_char(1, true)             end, "Align to a character")   -- Aligns to 1 character, looking left
-      map('x', 'gas', function() a.align_to_char(2, true, true)       end, "Align to 2 characters")  -- Aligns to 2 characters, looking left and with previews
-      map('x', 'gaw', function() a.align_to_string(false, true, true) end, "Align to a string")      -- Aligns to a string, looking left and with previews
-      map('x', 'gar', function() a.align_to_string(true, true, true)  end, "Align to a lua pattern") -- Aligns to a Lua pattern, looking left and with previews
+      map('x', 'gaa', function() a.align_to_char({ length = 1 })                      end, "Align to a character")   -- Aligns to 1 character, looking left
+      map('x', 'gas', function() a.align_to_char({ length = 2, preview = true})       end, "Align to 2 characters")  -- Aligns to 2 characters, looking left and with previews
+      map('x', 'gaw', function() a.align_to_string({ preview = true, regex = false }) end, "Align to a string")      -- Aligns to a string, looking left and with previews
+      map('x', 'gar', function() a.align_to_string({ preview = true, regex = true })  end, "Align to a regex")       -- Aligns to a Lua pattern, looking left and with previews
 
       -- Example gawip to align a paragraph to a string, looking left and with previews
       map(
@@ -118,7 +119,7 @@ return {
         function()
           a.operator(
             a.align_to_string,
-            { is_pattern = false, reverse = true, preview = true }
+            { regex = false, preview = true }
           )
         end,
         "Align to a string"
@@ -129,12 +130,21 @@ return {
         'n',
         'gaa',
         function()
-          a.operator(
-            a.align_to_char,
-            { length = 1, reverse = true }
-          )
+          a.operator( a.align_to_char )
         end,
         "Align to a character"
+      )
+
+      map(
+        'n',
+        'gar',
+        function()
+          a.operator(
+            a.align_to_string,
+            { regex = true, preview = true }
+          )
+        end,
+        "Align to a regex"
       )
     end,
   },
