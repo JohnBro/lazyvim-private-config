@@ -25,6 +25,7 @@ return {
               javascript = join_paths(dict_dir, "javascript.dict"),
               python     = join_paths(dict_dir, "python.dict"),
               sh         = join_paths(dict_dir, "sh.dict"),
+              vim        = join_paths(dict_dir, "vim.dict")
             },
             filepath = {},
             spelllang = {

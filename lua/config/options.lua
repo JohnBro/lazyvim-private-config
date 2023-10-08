@@ -42,6 +42,7 @@ vim.opt.listchars = {
 }
 vim.opt.pumblend = 20
 vim.opt.undodir = join_paths(vim.fn.stdpath("cache"), "undo")
+vim.opt.whichwrap = 'b,s,<,>,h,l'
 vim.opt.wildignorecase = true
 vim.opt.wildignore = {
   "*.aux,*.out,*.toc",
